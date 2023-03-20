@@ -71,4 +71,5 @@ The figure below illustrates this behavior using an example.
 
 [kattints ide](https://www.google.com) 
 
+<<<<<<< HEAD
 branch A
