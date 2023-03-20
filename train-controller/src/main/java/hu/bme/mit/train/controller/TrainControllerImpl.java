@@ -22,6 +22,7 @@ public class TrainControllerImpl implements TrainController {
 		}
 
 		enforceSpeedLimit();
+		emergencyBrake(emBrake, referenceSpeed);
 	}
 
 	@Override
@@ -52,6 +53,11 @@ public class TrainControllerImpl implements TrainController {
 			while(referenceSpeed > 0){
 				joystickPosition = -1;
 			}
+	}
+
+	@Override
+	public void getEmergencyStatus() {
+		
 	}
 
 }
