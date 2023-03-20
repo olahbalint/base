@@ -47,7 +47,7 @@ public class TrainControllerImpl implements TrainController {
 		this.step = joystickPosition;		
 	}
 
-	private void emergencyBrake(boolean emBrake){
+	private void emergencyBrake(boolean emBrake, int joystickPosition){
 		if (emBrake)
 			while(referenceSpeed > 0){
 				joystickPosition = -1;
