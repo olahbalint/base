@@ -2,12 +2,18 @@ package hu.bme.mit.train.controller;
 
 import hu.bme.mit.train.interfaces.TrainController;
 
+import java.sql.Time;
+
+import com.google.common.collect.HashBasedTable;
+import com.google.common.collect.Table;
+
 public class TrainControllerImpl implements TrainController {
 
 	private int step = 0;
 	private int referenceSpeed = 0;
 	private int speedLimit = 0;
 	private boolean emBrake = false;
+
 
 	@Override
 	public void followSpeed() {
@@ -23,6 +29,7 @@ public class TrainControllerImpl implements TrainController {
 
 		enforceSpeedLimit();
 		emergencyBrake(emBrake, referenceSpeed);
+		fillTable();
 	}
 
 	@Override
@@ -60,4 +67,9 @@ public class TrainControllerImpl implements TrainController {
 		
 	}
 
+	@Override
+	public void fillTable(){
+		Table<String, String, String> tachographTable = HashBasedTable.create();
+		tachographTable.put("0","5","10");
+	}
 }
